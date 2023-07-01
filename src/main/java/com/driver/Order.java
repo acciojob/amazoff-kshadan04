@@ -5,6 +5,10 @@ public class Order {
     private String id;
     private int deliveryTime;
 
+    public Order(){
+
+    }
+
     public Order(String id, String deliveryTime) {
 
         // The deliveryTime has to converted from string to int and then stored in the attribute
@@ -15,6 +19,7 @@ public class Order {
     }
 
     public String getId() {
+
         return id;
     }
 
@@ -23,10 +28,12 @@ public class Order {
     }
 
     public int getDeliveryTime() {
+
         return deliveryTime;
     }
 
     public void setDeliveryTime(int deliveryTime) {
+
         this.deliveryTime = deliveryTime;
     }
 }

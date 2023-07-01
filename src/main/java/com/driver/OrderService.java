@@ -8,11 +8,13 @@ import java.util.List;
 public class OrderService {
     @Autowired
     OrderRepository orderRepository;
+
     public void addOrder(Order order) {
         orderRepository.addOrder(order);
     }
 
     public void addPartner(String partnerId) {
+
         orderRepository.addPartner(partnerId);
     }
 
@@ -21,10 +23,12 @@ public class OrderService {
     }
 
     public Order getOrderById(String orderId) {
+
         return orderRepository.getOrderById(orderId);
     }
 
     public DeliveryPartner getPartnerById(String partnerId) {
+
         return orderRepository.getPartnerById(partnerId);
     }
 
@@ -42,6 +46,7 @@ public class OrderService {
     }
 
     public Integer getCountOfUnassignedOrders() {
+
         return orderRepository.getCountOfUnassignedOrders();
     }
 
@@ -58,13 +63,13 @@ public class OrderService {
         String MM = String.valueOf(time%60);
 
         if(HH.length() < 2){
-            HH = "0"+ HH;
+            HH = '0'+ HH;
         }
         if(MM.length() < 2){
-            MM = "0"+MM;
+            MM = '0'+MM;
         }
 
-        return HH +":"+ MM;
+        return HH +':'+ MM;
     }
 
     public void deletePartnerById(String partnerId) {
