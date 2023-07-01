@@ -99,11 +99,11 @@ public class OrderRepository {
     public void deletePartnerById(String partnerId) {
         deliveryPartnerDb.remove(partnerId);
 
-        List<String> listOfOrder = partnerOrderDb.get(partnerId);
-        partnerOrderDb.remove((partnerId));
+        List<String> listOfOrders = partnerOrderDb.get(partnerId);
+        partnerOrderDb.remove(partnerId);
 
-        for(String order : listOfOrder){
-            listOfOrder.remove(order);
+        for(String order: listOfOrders){
+            orderPartnerDb.remove(order);
         }
 
     }
